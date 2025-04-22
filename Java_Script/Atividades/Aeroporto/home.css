@@ -1,0 +1,59 @@
+
+.logo img {
+    width: 100px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização do main */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #0073e6;
+}
+
+.introducao, .tipos-manutencao, .procedimentos, .importancia {
+    margin-bottom: 20px;
+}
+
+.tipo {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e7f3ff;
+    border-left: 5px solid #0073e6;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+/* Estilização do rodapé */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #0073e6;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

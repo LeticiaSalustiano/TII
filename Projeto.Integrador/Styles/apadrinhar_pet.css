@@ -1,0 +1,342 @@
+@charset "UTF-8";
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+@font-face {
+    font-family: "zen kaku gothic new light";
+    src: url(../fontes/zen-kaku-gothic-new-light.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "quantum";
+    src: url(../fontes/Quantum.otf) format("truetype");
+}
+
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------Cores-------*/
+:root {
+    --blue: #14C5EC;
+    --light-blue: #BBEEF9;
+    --dark-blue: #095f72;
+    --white: #EDFBFE;
+}
+
+/* Estilos Gerais do Corpo */
+body {
+    color: #1e1e1e;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+}
+
+/*-------Menu-------*/
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue);
+    font-family: "Roboto Flex", sans-serif;
+    padding: 20px;
+    height: 14vh;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    color: var(--white);
+    padding: 10px 17px;
+    text-decoration: none;
+    font-size: 1.05rem; /* Usando rem para maior responsividade */
+}
+
+/* Botão de Ajuda */
+.menu button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Menu Hamburguer */
+.menu .botao {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+    display: none;
+}
+
+/* Logo */
+.menu img {
+    width: 76px;
+    height: 70px;
+    margin-left: 30px;
+}
+
+/*-------Banner-------*/
+.banner {
+    width: 100%;
+    height: 50vh;
+}
+
+/* Opções do Menu */
+.opcoes {
+    width: 100%;
+    background-color: var(--dark-blue);
+}
+
+.opt:hover {
+    background-color: rgba(119, 136, 153, 0.61);
+}
+
+.opt {
+    text-decoration: none;
+    font-size: 1.3rem; /* Usando rem para garantir a responsividade */
+    color: azure;
+    margin-left: 13%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Layout Pinterest */
+.pinterest-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background-color: #14c4eccc;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    break-inside: avoid;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card p {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    font-size: 1rem; /* Usando rem para fontes mais responsivas */
+    color: #080808;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.raca {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    font-size: 1rem; /* Usando rem */
+    color: #080808;
+}
+
+/*------- Lightbox Overlay -------*/
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Imagem no Lightbox */
+.lightbox-image {
+    max-width: 74%;
+    max-height: 74%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+   
+}
+
+/* Botão de Fechar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    font-size: 3.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    z-index: 2000; /* Para ficar acima de tudo */
+    transition: color 0.3s ease-in-out;
+}
+
+.close:hover {
+    color: #ff5757; /* Cor de destaque ao passar o mouse */
+}
+
+/* Botões de Ação */
+.btn2 {
+    margin-top: 33%;
+    margin-left: 10px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #007BFF; /* Azul vibrante */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn2:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Leve efeito de levantar */
+}
+
+/*------- Formulário Container -------*/
+#form-container {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+#form-container h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 2px solid var(--dark-blue);
+    padding-bottom: 10px;
+}
+
+#form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#form-container input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Botão do Formulário */
+#form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#form-container button:hover {
+    background-color: var(--blue);
+}
+
+/* Responsividade para o Formulário */
+@media (max-width: 500px) {
+    #form-container {
+        width: 90%; /* Largura ajustada para dispositivos menores */
+    }
+}
+@media (max-width: 1200px) {
+    .lightbox-image {
+        max-width: 70%;
+        max-height: 70%;
+        margin-left: 3%;
+    }
+
+    #adotar{
+        position: absolute;
+        top: 40%;
+        left: 70%;
+     }
+ 
+     #apadrinhar{
+         position: absolute;
+         top: 40%;
+         left: 50%;
+      }
+
+    .close {
+        font-size: 3rem;
+        top: 15px;
+        right: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lightbox-image {
+        max-width: 90%;
+        max-height: 90%;
+        margin-left: 1%;
+    }
+
+    #adotar{
+       position: absolute;
+       top: 59%;
+       left: 67%;
+    }
+
+    #apadrinhar{
+        position: absolute;
+        top: 59%;
+        left: 30%;
+     }
+
+    .close {
+        font-size: 2.5rem;
+        top: 10px;
+        right: 30px;
+    }
+}
+

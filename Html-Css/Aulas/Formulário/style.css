@@ -1,0 +1,75 @@
+*{
+    margin:  0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,body{
+   width: 100vh;
+   height:100vh; 
+}
+
+body{
+    position: relative;
+    background-color: rgba(209, 209, 209, 0.856);
+}
+
+main{
+    position: relative;
+    top: 60%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color:rgb(255, 255, 255);
+    padding: 6%;
+    margin: 10%;
+    }
+
+legend{
+    font-size: 25px;
+    font-weight: 550;
+    
+}
+
+label{
+    font-weight: 550;
+    padding: 17px 20px 0px 0px;
+    display: inline-block;
+    width: 50px;
+    font-size: 15px;
+}
+
+.cadastro{
+    width: 40%;
+    margin-left: 4%;
+    
+
+}
+
+.datas{
+    width: 30%;
+  margin-top: 10px;
+}
+
+input{
+    height: 30px;
+    margin: 5px;
+   
+    text-align: left;
+ 
+}
+
+input#masc{
+    margin-left: 10px;
+    
+}
+
+input#inivel{
+    margin: 20px;
+    
+}
+
+fieldset{
+    margin: 5px;
+    align-items: center;
+}

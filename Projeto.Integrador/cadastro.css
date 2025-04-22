@@ -1,0 +1,170 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+ 
+@font-face {
+    font-family: "zen kaku gothic new light";
+    src: url(../fontes/zen-kaku-gothic-new-light.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "quantum";
+    src: url(../fontes/Quantum.otf) format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------Cores-------*/
+:root {
+    --blue: #14C5EC;
+    --light-blue: #BBEEF9;
+    --dark-blue: #095f72;
+    --white: #EDFBFE;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #1e1e1e;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--white);          
+}
+
+/*-------Menu-------*/
+.menu {
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue);
+    font-family: "Roboto Flex";
+    padding: 20px;
+}
+
+/*-------Botão Voltar-------*/
+.menu button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/*-------Menu Hamburguer (Mobile)-------*/
+.menu .botao {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+    display: none;
+}
+
+.menu a {
+    color: var(--white);
+    padding: 10px 17px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/*-------Logo-------*/
+.menu img {
+    width: 76px;
+    height: 70px;
+    margin-left: 30px;
+}
+
+.titulo {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto Flex";
+}
+
+.titulo h1 {
+    color: var(--blue);
+    font-size: 50px;
+}
+
+.titulo h2 {
+    font-size: 30px;
+}
+
+/*-------Banner2-------*/
+.banner2 {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 150px;
+    font-family: "Zen Kaku Gothic New";
+    font-weight: 400;
+    gap: 10px;
+}
+
+/*-------Fonte Personalizada (Quantum)-------*/
+#font {
+    font-family: 'quantum';
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+    .titulo h2 {
+        font-size: 20px;
+    }
+
+    p{
+        text-align: center;
+    }
+
+    .dados {
+        padding: 15px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn button {
+        width: 30%;
+        margin-left: 68%;
+    }
+
+    .btn2 button {
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+
+
+.post{
+    color: var(--light-blue);
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imagens/Logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./Styles/cadastro.css">
+    <title>Cadastre-se</title>
+</head>
+<body>
+
+    <nav class="menu">
+        <!--<a href="./paginainicial.html"><img src="./imagens/Logo.png" alt="Logo"></a>-->
+        <button><a href="./paginainicial.html">Voltar</a></button>
+    </nav>
+
+    <!-- Tela de Seleção Inicial -->
+    <div id="telaInicial" style="align-items: center;">
+        <h1>Escolha o tipo de cadastro</h1>  
+       <!-- <button onclick="mostrarFormulario('colaborador')">Colaborador</button>
+        <button onclick="mostrarFormulario('padrinho')">Padrinho</button>
+        <button onclick="mostrarFormulario('voluntario')">Voluntário</button>-->      
+        <button onclick="mostrarFormulario('usuario')">Usuário</button>
+        <button onclick="window.location.href='login.php'">Adm</button>
+
+    </div>
+
+    <!-- Formulário -->
+    <div id="formulario" style="display:none;">
+        <div class="titulo">
+            <h1>Preencha seus Dados</h1>
+            <h2>Entraremos em contato com você</h2>
+            <p>Bem-vindo(a) ao nosso formulário de interesse.</p>
+            <p>Ficamos muito felizes por você ter dado o primeiro passo para ser um colaborador, usuário, padrinho ou voluntário PET.</p>
+        </div>
+
+        <!-- Formulário de cadastro -->
+        <form method="POST" action="cadastrar.php" onsubmit="return validarFormulario()">
+            <div class="info">
+                <input type="hidden" id="tipoCadastro" name="tipoCadastro">
+                <input type="text" id="nome" name="nome" placeholder="Nome Completo: " required>
+                <input type="date" id="idade" name="idade" placeholder="Data de Nascimento: " required>
+                <input type="tel" id="telefone" name="telefone" placeholder="Telefone: " required>
+                <input type="text" id="cpf" name="cpf" placeholder="CPF: " required>
+                <input type="email" id="email" name="email" placeholder="Email: " required>
+                
+                
+                <!-- Botão de submissão do formulário -->
+              <button type="submit" onclick="registerUser()">Cadastrar</button>
+
+              <Script>
+                // Função para registrar o usuário e atualizar o estado
+              function registerUser() {
+                     localStorage.setItem('userRegistered', true); // Define que o usuário está registrado
+                     alert('Cadastro realizado com sucesso! Agora você pode acessar o menu.');
+                     window.location.href = './paginainicial.html'; // Redireciona para a página inicial após o cadastro
+}
+
+              </Script>
+
+            </div>
+        </form>
+        
+        <!-- Back button -->
+        <div class="btn2"><button onclick="voltar()">Voltar</button></div>
+        
+        <!-- Banner section -->
+        <div class="banner2">
+            <h1>Desenvolvido por <span id="font">LDGL</span></h1>
+            <div class="redes">
+                <a href="https://pt-br.facebook.com/"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+            </div>
+        </div>
+        
+
+    <script>
+        // Função para exibir o formulário com base na escolha do tipo de cadastro
+        function mostrarFormulario(tipo) {
+             document.getElementById("telaInicial").style.display = "none";
+             document.getElementById("formulario").style.display = "block";
+
+        // Definir o tipo de cadastro no campo oculto
+             document.getElementById("tipoCadastro").value = tipo;
+}
+
+        // Função para voltar à tela de seleção
+        function voltar() {
+            document.getElementById("telaInicial").style.display = "block";
+            document.getElementById("formulario").style.display = "none";
+}
+
+
+function validarFormulario() {
+    let idade = document.getElementById("idade").value;
+    let tel = document.getElementById("telefone").value;
+    let cpf = document.getElementById("cpf").value;
+    let email = document.getElementById("email").value;
+
+    // Banco local simulado para buscar usuários
+    let bancoUsuarios = [
+        { nome: "João Silva", cpf: "12345678901", email: "joao@example.com" },
+        { nome: "Maria Oliveira", cpf: "98765432100", email: "maria@example.com" },
+        { nome: "Ana Souza", cpf: "11122233344", email: "ana@example.com" }
+    ];
+
+    // Validação de idade
+    let dataNascimento = new Date(idade);
+    let hoje = new Date();
+    let idadeCalculada = hoje.getFullYear() - dataNascimento.getFullYear();
+    let mes = hoje.getMonth() - dataNascimento.getMonth();
+    if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+        idadeCalculada--;
+    }
+
+    if (idadeCalculada < 18 || idadeCalculada > 90) {
+        alert("A idade deve estar entre 18 e 90 anos.");
+        return false;
+    }
+
+    // Validação de telefone
+    tel = tel.replace(/\D/g, ""); // Remove caracteres não numéricos
+    if (tel.length !== 11) {
+        alert("O número de telefone deve ter 11 dígitos.");
+        return false;
+    }
+
+    // Validação de CPF
+    cpf = cpf.replace(/\D/g, ""); // Remove caracteres não numéricos
+    function validarCPF(cpf) {
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+            return false;
+        }
+
+        let soma = 0, resto;
+        for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(9))) return false;
+
+        soma = 0;
+        for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(10))) return false;
+
+        return true;
+    }
+
+    if (!validarCPF(cpf)) {
+        alert("O CPF não é válido. Verifique o número e o formato.");
+        return false;
+    }
+
+    // Validação de email
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        return false;
+    }
+
+    // Verificar se o CPF ou e-mail já existem no banco
+    let usuarioEncontrado = bancoUsuarios.find(usuario =>
+        usuario.cpf === cpf || usuario.email === email
+    );
+
+    if (usuarioEncontrado) {
+        alert(`Usuário já cadastrado! CPF: ${usuarioEncontrado.cpf}`);
+        return false;
+    }
+
+    alert("Formulário válido e enviado!");
+    return true; // Envia o formulário se todas as validações passarem
+}
+
+
+    </script>
+</body>
+</html>
+
+<style>
+
+/* Tela de Seleção Inicial */
+#telaInicial {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto Flex";
+  
+    margin-top: 100px;
+}
+
+#telaInicial h1 {
+    font-size: 35px;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+#telaInicial button {
+    width: 80%;
+    max-width: 300px;
+    height: 50px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 18px;
+    font-family: "Roboto Flex", sans-serif;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#telaInicial button:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+}
+
+#telaInicial button:active {
+    background-color: var(--light-blue);
+    transform: translateY(1px);
+}
+
+
+/* Estilos do formulário */
+form{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+div.info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+ input{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 5px rgba(22, 160, 133, 0.5);
+}
+
+/* Estilo para o botão (btn) */
+.info button  {
+    width: 30%;
+    height: 50px;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 18px;
+    font-family: "Roboto Flex", sans-serif;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 68%;
+    margin-top: 35px;
+}
+
+.info button:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+}
+
+.info button:active {
+    background-color: var(--light-blue);
+    transform: translateY(1px);
+}
+
+.btn2 button {
+    width: 10%;
+    max-width: 200%;
+    height: 50px;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 18px;
+    font-family: "Roboto Flex", sans-serif;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 44%;
+    margin-top: -22px;
+}
+
+.btn2 button:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+}
+
+.btn2 button:active {
+    background-color: var(--light-blue);
+    transform: translateY(1px);
+}
+
+</style>

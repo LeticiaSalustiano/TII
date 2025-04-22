@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&display=swap');
+
+@font-face {
+    font-family: "quantum";
+    src: url(../fontes/Quantum.otf) format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------Cores_e_Fontes-------*/
+:root{
+    --blue: #14C5EC;
+    --light-blue: #BBEEF9;
+    --dark-blue: #095f72;
+    --dark-blue2: #3E8FCF;
+    --white: #EDFBFE;
+    --gray: #F8EAEA;
+}
+
+body{   
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+    color: #1e1e1e;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--white);          
+}
+
+/*-------Menu-------*/
+.menu{
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue);
+    font-family: "Roboto Flex";
+    padding: 20px;
+}
+
+.menu li{
+    display: inline-block;
+}
+
+.menu a{
+    color: var(--white);
+    padding: 10px 17px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/*-------Botão_de_ajude-------*/
+.menu button{
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/*-------Menu_Hamburguer-------*/
+.menu .botao{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+    display: none;
+}
+
+/*-------Logo-------*/
+.menu img{
+    width: 76px;
+    height: 70px;
+    margin-left: 30px;
+}
+
+/*-------Banner-------*/
+.banner{
+    width: 100%;
+    height: 50vh;
+}
+
+#parallax{
+    background-image: url(../imagens/Banner_de_coelhos.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*-------Texto-------*/
+.texto{
+    font-family: Anek Telugu;
+    font-size: 25px;
+    padding: 30px;
+    color: rgba(0, 0, 0, 0.767);
+    margin-top: 100px;
+    margin-bottom: 5px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/*-------Code-------*/
+.code{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 10px solid black;
+    background-color: var(--gray);
+    margin-top: 5%;
+}
+
+.code h1{
+    font-size: 50px;
+    font-family: "Amatic SC";
+}
+
+.code h2{
+    font-size: 40px;
+    color: var(--blue);
+    font-family: "Anek Telugu";
+}
+
+.code h3{
+    font-size: 30px;
+    color: var(--dark-blue);
+    font-family: "Anek Telugu"; 
+}
+
+button{
+
+    width: 170px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #1e1e1e;
+    color: var(--white);
+    font-size: 15px;
+    cursor: pointer;
+   
+}
+
+#codigo {
+    display: none;
+    margin-top: 20px;
+}
+
+/*-------Link-------*/
+.link{
+    width: 50%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link img{
+    width: 50%;
+    height: 50vh;
+}
+
+.link h3{
+    font-family: "Amatic SC";
+    font-size: 40px;
+}
+
+/*-------Chave_Pix-------*/
+.chave{
+    width: 40%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    -webkit-box-shadow: 0px 6px 9px -3px rgba(0,0,0,0.58);
+    -moz-box-shadow: 0px 6px 9px -3px rgba(0,0,0,0.58);
+    box-shadow: 0px 6px 9px -3px rgba(0,0,0,0.58);
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.chave p{
+    color: var(--dark-blue);
+    font-size: 24px;
+    font-family: "Anek Telugu";
+}
+
+/*-------Patrocinadores-------*/
+.patrocinadores{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto Flex";
+}
+
+.patrocinadores h1{
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+/*-------Imagens-------*/
+.imagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    gap: 30px;
+}
+
+.imagem img{
+    width: 100px;
+    height: 100px;
+}
+
+/*-------Banner2-------*/
+.banner2{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 150px;
+    font-family: "Zen Kaku Gothic New";
+    font-weight: 400;
+    gap: 10px;
+    padding: 0 20px;
+}
+ 
+/*-------Fonte-------*/
+#font{
+    font-family: 'quantum';
+}
+ 
+/*---Redes---*/
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+ 
+.redes a{
+    text-decoration: none;
+    color: var(--white);
+}
+ 
+.redes i{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-blue);
+    border-radius: 50%;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+ 
+.redes i:hover{
+    color: var(--blue);
+}
+ 
+
+/*--------Responsividade--------*/
+
+/* Para telas pequenas (celulares e dispositivos com largura até 600px) */
+@media (max-width: 700px) {
+
+    /* Menu */
+    .menu {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .menu button {
+        width: 180px;
+    }
+
+    .menu .botao {
+        display: block;
+    }
+
+    .menu img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Banner */
+    .banner {
+        height: 40vh;
+    }
+
+    #parallax {
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    /* Code */
+    .code {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .code h1 {
+        font-size: 30px;
+    }
+
+    .code h2 {
+        font-size: 30px;
+    }
+
+    .code h3 {
+        font-size: 25px;
+    }
+
+    /* Links */
+    .link {
+        width: 80%;
+        height: auto;
+    }
+
+    .link img {
+        width: 100%;
+        height: auto;
+    }
+
+    .link h3 {
+        font-size: 35px;
+    }
+
+    /* Chave Pix */
+    .chave {
+        width: 90%;
+        gap: 10px;
+        height: auto;
+        padding: 12px;
+    }
+
+    .chave p {
+        font-size: 12px;
+        gap: 10px;
+    }
+
+
+    /* Patrocinadores */
+    .patrocinadores {
+        height: auto;
+        padding: 20px;
+    }
+
+    .patrocinadores h1 {
+        font-size: 30px;
+    }
+
+    /* Imagens */
+    .imagens {
+        gap: 20px;
+    }
+
+    .imagem img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Banner 2 */
+    .banner2 {
+        height: 15vh;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 18px;
+        gap: 5px;
+    }
+}
+
+/* Para telas médias (tablets e dispositivos com largura até 1024px) */
+@media (max-width: 1024px) {
+
+    /* Menu */
+    .menu {
+        height: 18vh;
+    }
+
+    .menu li {
+        margin-right: 2px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .menu button {
+        width: 50px;
+        font-size: 10px;
+    }
+
+    .menu img {
+        width: 70px;
+        height: 65px;
+    }
+
+    /* Banner */
+    .banner {
+        height: 45vh;
+    }
+
+    #parallax {
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Code */
+    .code h1 {
+        font-size: 40px;
+    }
+
+    .code h2 {
+        font-size: 35px;
+    }
+
+    .code h3 {
+        font-size: 28px;
+    }
+
+    #qrcode{
+        width: 350px;
+        height: 350px;
+    }
+
+    /* Links */
+    .link {
+        width: 70%;
+        height: auto;
+    }
+
+    .link img {
+        width: 100%;
+        height: auto;
+    }
+
+    .link h3 {
+        font-size: 38px;
+    }
+
+    /* Chave Pix */
+    .chave {
+        width: 70%;
+        gap: 40px;
+    }
+
+    .chave p {
+        font-size: 22px;
+    }
+
+    /* Patrocinadores */
+    .patrocinadores {
+        height: auto;
+    }
+
+    .patrocinadores h1 {
+        font-size: 36px;
+    }
+
+    /* Imagens */
+    .imagens {
+        gap: 25px;
+    }
+
+    .imagem img {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Banner 2 */
+    .banner2 {
+        font-size: 20px;
+    }
+}
+
+/* Para telas grandes (desktops e dispositivos com largura acima de 1024px) */
+@media (min-width: 1025px) {
+    /* Menu */
+    .menu {
+        height: 14vh;
+    }
+
+    .menu a {
+        font-size: 17px;
+    }
+
+    .menu button {
+        width: 200px;
+    }
+
+    .menu img {
+        width: 76px;
+        height: 70px;
+    }
+
+    /* Banner */
+    .banner {
+        height: 50vh;
+    }
+
+    #parallax {
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Code */
+    .code {
+        height: 100vh;
+    }
+
+    .code h1 {
+        font-size: 50px;
+    }
+
+    .code h2 {
+        font-size: 40px;
+    }
+
+    .code h3 {
+        font-size: 30px;
+    }
+
+    /* Links */
+    .link {
+        width: 50%;
+        height: 70vh;
+    }
+
+    .link img {
+        width: 50%;
+        height: 50vh;
+    }
+
+    .link h3 {
+        font-size: 40px;
+    }
+
+    /* Chave Pix */
+    .chave {
+        width: 40%;
+        gap: 50px;
+    }
+
+    .chave p {
+        font-size: 20px;
+    }
+
+    /* Patrocinadores */
+    .patrocinadores {
+        height: 60vh;
+    }
+
+    .patrocinadores h1 {
+        font-size: 40px;
+    }
+
+    /* Imagens */
+    .imagens {
+        gap: 30px;
+    }
+
+    .imagem img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Banner 2 */
+    .banner2 {
+        font-size: 20px;
+    }
+}

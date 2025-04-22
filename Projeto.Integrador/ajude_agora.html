@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imagens/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./Styles/ajude_agora.css">
+    <title>SAFE PET</title>
+</head>
+<body>
+    <nav class="menu">
+        <a href="./paginainicial.html"><img src="./imagens/Logo.png" alt=""></a>
+        <ul id="menu">
+            <li><a href="./conheça.html">CONHEÇA A SAFE PET</a></li>
+            <li><a href="./metodos.html">MÉTODOS</a></li>
+            <li><a href="./ajudar.html">COMO POSSO AJUDAR?</a></li>
+            <li><a href="./contato.html">CONTATO</a></li>
+            <button><a href="./ajudar.html">Voltar</a></button>
+        </ul>
+        <button class="botao" id="menubutton"><span class="material-symbols-outlined">menu</span></button>
+    </nav>
+
+    <div class="banner" id="parallax"></div>
+
+    <div class="texto"><p>Na <strong>Safe Pet</strong>, trabalhamos para resgatar, cuidar e encontrar novos lares para cães em situação de abandono. 
+        Sua doação contribui para oferecer alimentação, cuidados médicos e abrigo. Com seu apoio, podemos transformar vidas e dar a esses 
+        animais uma nova chance de ser felizes. Junte-se a nós nessa missão! Doe agora e faça a diferença.</p></div>
+
+
+    <div class="code">
+        <h1>Aponte para o</h1>
+        <h2>QR CODE</h2>
+        <div class="link">
+            <img id="qrcode" src="" alt="QR Code">
+            <div class="chave">
+                <p>Chave Pix: 
+                    467.926.528.06
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="patrocinadores">
+        <h1>NOSSOS PATROCINADORES</h1>
+        <div class="imagens">
+            <!-- Imagens dos patrocinadores -->
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro01.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro02.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro03.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro04.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro05.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro06.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro07.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro08.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro09.png" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Parceiros/parceiro10.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="banner2">
+        <h1>Desenvolvido por <span id="font">LDGL</span></h1>
+        <div class="redes">
+            <a href="https://pt-br.facebook.com/"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+    </div>
+
+
+    <script>
+        // Função para gerar o QR Code usando a API qrserver.com
+        function gerarQRCode() {
+            const chavePix = "467.926.528-06";  // A chave Pix que será codificada no QR Code
+
+            // Definindo os parâmetros para gerar o QR Code
+            const qrcodeURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(chavePix)}&size=500x500&ecc=L&color=000000&bgcolor=ffffff`;
+
+            // Atualizando o src da imagem com a URL do QR Code gerado
+            document.getElementById('qrcode').src = qrcodeURL;
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = gerarQRCode;
+    </script>
+    
+</body>
+</html>
